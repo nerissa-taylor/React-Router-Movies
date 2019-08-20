@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
-  const id =   props.match.params.id
+  const id =   props.match.params.id;
+ 
   useEffect(() => {
      
     // change ^^^ that line and grab the id from the URL
@@ -34,6 +36,7 @@ const Movie = (props) => {
   return (
     <div className="save-wrapper">
       <div className="movie-card">
+      {/* <button onClick={handleRouteToClick} className="movie-card">Click</button> */}
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
@@ -50,6 +53,7 @@ const Movie = (props) => {
         ))}
       </div>
       <div className="save-button">Save</div>
+      {/* <Link to={`/movies-card/${props.match.params.id}/movies`}>MoviesDetails</Link> */}
     </div>
   );
 }
