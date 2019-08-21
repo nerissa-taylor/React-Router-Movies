@@ -1,17 +1,19 @@
 import React from 'react';
 
 const MovieCard = props => {
-  const  handleRouteToClick = e =>{
-    e.preventDefault();
-    props.history.push("/movie-list/");
-  };
-  // const movie = moviesId.find(movie => props.match.params.id === movie.id);
-  return
-  <div className="movie-card">
-  <button onClick={handleRouteToClick} className="save-button">Movie</button>
-</div>
-  );
   
+
+  
+  // const movie = moviesId.find(movie => props.match.params.id === movie.id);
+  return(
+  <div className="movie-card">
+          <div onClick={() => routeToMovies(props, movie)}>{movie.title}</div> 
+
+  </div>
+  );
+  function routeToMovies(props, movie){
+    props.history.push(`/movies/${movie.id}`);
+  }
 }
 
 

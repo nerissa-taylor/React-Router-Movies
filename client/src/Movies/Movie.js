@@ -3,7 +3,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 const Movie = (props) => {
-  const [movie, setMovie] = useState();
+  const [movie, setMovie] = useState(null);
   const id =   props.match.params.id;
  
   useEffect(() => {
@@ -31,13 +31,15 @@ const Movie = (props) => {
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
-
+  
   const { title, director, metascore, stars } = movie;
   return (
-    <div className="save-wrapper">
+   
       <div className="movie-card">
-      {/* <button onClick={handleRouteToClick} className="movie-card">Click</button> */}
+      
         <h2>{title}</h2>
+        <Link to="/movies/1">Other Movie</Link>
+    <div className="save-wrapper">
         <div className="movie-director">
           Director: <em>{director}</em>
         </div>
@@ -46,16 +48,17 @@ const Movie = (props) => {
         </div>
         <h3>Actors</h3>
 
-        {stars.map(star => (
+        {stars && stars.map(star => (
           <div key={star} className="movie-star">
             {star}
           </div>
         ))}
       </div>
       <div className="save-button">Save</div>
-      {/* <Link to={`/movies-card/${props.match.params.id}/movies`}>MoviesDetails</Link> */}
+ 
     </div>
   );
+  
 }
 
 export default Movie;
