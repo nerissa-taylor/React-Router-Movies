@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+
 
 const Movie = (props) => {
   const [movie, setMovie] = useState(null);
@@ -38,7 +38,7 @@ const Movie = (props) => {
       <div className="movie-card">
       
         <h2>{title}</h2>
-        <Link to="/movies/1">Other Movie</Link>
+      
     <div className="save-wrapper">
         <div className="movie-director">
           Director: <em>{director}</em>

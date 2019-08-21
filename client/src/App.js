@@ -19,16 +19,16 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <div>
+    
    
       
       
-      
+    
       <Route exact path="/" component={MovieList} />
       <Route exact path="/movies/:id" render={props => <Movie {...props} movies={movie} />} /> </div>
-      {/* <button onClick={handleRouteToClick} className="saved-button">Click</button> */}
+    
 
-    </div>
+
   );
 };
 
