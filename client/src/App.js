@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie'
 
@@ -23,8 +23,8 @@ const App = () => {
    
       
       
-      <Link className="movie-list" to={`/movies/$movies.id}`}>Movies</Link>
-      <Route path="/movies" render={props => <MovieList {...props} movies={movie} />} />
+      
+      <Route exact path="/" component={MovieList} />
       <Route exact path="/movies/:id" render={props => <Movie {...props} movies={movie} />} /> </div>
       {/* <button onClick={handleRouteToClick} className="saved-button">Click</button> */}
 
